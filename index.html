@@ -5,119 +5,122 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Primary SEO -->
-  <title>SpendNest – Expense Tracker & Budget Planner</title>
-  <meta name="description" content="Take control of your money with SpendNest, a personal expense tracker designed to help you monitor spending, manage your budget, and understand your finances. Available on iOS, with Android coming soon.">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#071426">
+  <title>SpendNest – Offline Expense Tracker & Budget Planner</title>
+  <meta name="description" content="Track expenses offline with SpendNest. Record transactions in seconds, set budgets, view spending charts and summaries, and keep your financial data on your device.">
+  <meta name="keywords" content="SpendNest, offline expense tracker, budget planner app, personal finance app, expense tracking, spending reports, private expense tracker, budget management">
   <meta name="author" content="SpendNest">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#101827">
 
   <link rel="canonical" href="https://spendnestapp.github.io/">
 
-  <!-- Social sharing / Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="SpendNest – Take Control of Your Money">
-  <meta property="og:description" content="A smarter way to track expenses and understand your spending. SpendNest is available on iOS, with Android coming soon.">
+  <meta property="og:title" content="SpendNest – Your Money. Your Privacy.">
+  <meta property="og:description" content="Track expenses, plan your budget, and understand your spending with SpendNest, the simple offline expense tracker.">
   <meta property="og:url" content="https://spendnestapp.github.io/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SpendNest – Expense Tracker">
-  <meta name="twitter:description" content="Your money. Your control. Track expenses and build better money habits with SpendNest.">
+  <meta property="og:site_name" content="SpendNest">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="apple-itunes-app" content="app-id=6812546661">
 
-  <!-- App structured data: verify details before publishing -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "SpendNest",
+    "@type": "MobileApplication",
+    "name": "SpendNest - Expense Tracker",
     "applicationCategory": "FinanceApplication",
-    "operatingSystem": "iOS",
-    "description": "A personal expense tracker designed to help users monitor expenses, manage budgets, and understand spending habits.",
-    "url": "https://spendnestapp.github.io/"
+    "operatingSystem": "iOS, Android",
+    "description": "An offline expense tracker for recording transactions, planning budgets, and reviewing spending reports.",
+    "url": "https://spendnestapp.github.io/",
+    "downloadUrl": [
+      "https://apps.apple.com/us/app/spendnest-expense-tracker/id6812546661",
+      "https://play.google.com/store/apps/details?id=com.rkr.spendnest"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
   }
   </script>
 
   <style>
     :root {
-      --bg: #071426;
-      --bg-light: #0c1d32;
-      --card: #10243a;
+      --bg: #101827;
+      --panel: #182438;
+      --card: #1c2b40;
+      --text: #f5f7fb;
+      --muted: #aab7c9;
       --green: #b8f36b;
-      --green-dark: #8bd83b;
-      --white: #f7fafc;
-      --muted: #a4b3c6;
-      --border: rgba(255,255,255,.10);
-      --radius: 22px;
-      --max: 1160px;
+      --green-dark: #a5e65b;
+      --border: rgba(255,255,255,.1);
+      --max: 1120px;
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-padding-top: 85px;
     }
 
     body {
-      margin: 0;
       background: var(--bg);
-      color: var(--white);
-      font-family: "DM Sans", sans-serif;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Arial, sans-serif;
+      line-height: 1.65;
+      overflow-x: hidden;
     }
 
-    h1, h2, h3, .brand {
-      font-family: "Manrope", sans-serif;
-      line-height: 1.2;
-      letter-spacing: -0.035em;
-    }
-
-    h1 { font-size: clamp(2.8rem, 6vw, 5rem); margin: 22px 0; }
-    h2 { font-size: clamp(2rem, 4vw, 3.15rem); margin: 0 0 18px; }
-    h3 { font-size: 1.18rem; }
-    p { color: var(--muted); }
     a { color: inherit; text-decoration: none; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    img, svg { max-width: 100%; }
-    .container { width: min(var(--max), calc(100% - 40px)); margin: auto; }
-    .section { padding: 100px 0; }
-    .section-intro { max-width: 650px; margin: 0 auto 48px; text-align: center; }
-    .section-intro p { font-size: 1.08rem; }
-    .accent { color: var(--green); }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+    }
+
+    .section { padding: 88px 0; }
+
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
       color: var(--green);
-      font-size: .78rem;
-      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: .14em;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 14px;
     }
-    .eyebrow::before {
-      content: "";
-      width: 22px;
-      height: 2px;
-      background: var(--green);
+
+    h1, h2, h3 { line-height: 1.17; letter-spacing: -.7px; }
+
+    h1 { font-size: clamp(40px, 6vw, 66px); margin-bottom: 23px; }
+    h2 { font-size: clamp(30px, 4vw, 43px); margin-bottom: 18px; }
+    h3 { font-size: 20px; margin-bottom: 12px; }
+
+    p { color: var(--muted); }
+
+    .highlight { color: var(--green); }
+
+    .section-intro {
+      max-width: 690px;
+      text-align: center;
+      margin: 0 auto 44px;
     }
+
+    .section-intro p { margin-top: 12px; }
 
     /* Navigation */
-    .nav-wrap {
+
+    .navbar {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(7,20,38,.90);
+      z-index: 10;
+      background: rgba(16,24,39,.92);
+      backdrop-filter: blur(15px);
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(16px);
     }
 
-    nav {
-      min-height: 76px;
+    .nav-inner {
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -127,763 +130,893 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 11px;
-      font-size: 1.35rem;
-      font-weight: 800;
-      white-space: nowrap;
+      gap: 10px;
+      font-size: 21px;
+      font-weight: 850;
     }
 
-    .brand-icon {
+    .brand-mark {
       width: 39px;
       height: 39px;
-      border-radius: 13px;
       display: grid;
       place-items: center;
       background: var(--green);
       color: var(--bg);
-      font-weight: 800;
-      font-size: 1.1rem;
+      border-radius: 13px;
+      font-size: 23px;
+      font-weight: 900;
     }
 
-    .nav-links { display: flex; align-items: center; gap: 28px; }
-    .nav-links > a:not(.btn) { color: #c4cfdb; font-size: .92rem; }
-    .nav-links > a:hover { color: var(--green); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover, .footer-links a:hover { color: var(--green); }
+
+    .nav-cta {
+      background: var(--green);
+      color: var(--bg) !important;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+    }
+
+    /* Buttons */
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
 
     .btn {
+      min-height: 51px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 14px 21px;
+      padding: 13px 19px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 800;
       border: 1px solid transparent;
-      border-radius: 13px;
-      font: inherit;
-      font-weight: 700;
-      font-size: .94rem;
-      cursor: pointer;
       transition: transform .2s, background .2s;
     }
 
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: var(--green); color: #10200a; }
-    .btn-primary:hover { background: #c9ff87; }
-    .btn-outline { border-color: var(--border); background: rgba(255,255,255,.04); color: white; }
-    .btn-outline:hover { background: rgba(255,255,255,.09); }
-    .btn-small { padding: 10px 15px; font-size: .86rem; }
+    .btn:hover { transform: translateY(-3px); }
+
+    .btn-primary {
+      background: var(--green);
+      color: #111a25;
+    }
+
+    .btn-primary:hover { background: var(--green-dark); }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,.2);
+      background: rgba(255,255,255,.04);
+    }
+
+    .btn-secondary:hover { background: rgba(255,255,255,.09); }
+
+    .btn-icon { font-size: 21px; }
 
     /* Hero */
+
     .hero {
+      padding: 88px 0 90px;
       position: relative;
       overflow: hidden;
-      padding: 85px 0 100px;
-      background:
-        radial-gradient(ellipse at 78% 32%, rgba(91,161,70,.13), transparent 38%),
-        radial-gradient(ellipse at 15% 10%, rgba(37,101,163,.13), transparent 35%);
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      width: 470px;
+      height: 470px;
+      right: -180px;
+      top: -170px;
+      border-radius: 50%;
+      background: rgba(184,243,107,.1);
+      filter: blur(90px);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.03fr .97fr;
-      gap: 55px;
+      grid-template-columns: 1.08fr .92fr;
       align-items: center;
-    }
-
-    .hero h1 { max-width: 680px; }
-    .hero-copy { font-size: 1.12rem; max-width: 570px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin: 30px 0 20px; }
-    .trust-line { font-size: .88rem; margin-top: 22px; }
-
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 8px 13px;
-      border: 1px solid rgba(184,243,107,.25);
-      border-radius: 100px;
-      background: rgba(184,243,107,.06);
-      color: #d4f9b0;
-      font-size: .82rem;
-      font-weight: 600;
-    }
-
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 12px var(--green);
-    }
-
-    /* CSS-made app mockup: replace with genuine screenshots when available */
-    .visual-stage {
-      min-height: 470px;
+      gap: 45px;
       position: relative;
-      display: grid;
-      place-items: center;
     }
 
-    .glow {
-      position: absolute;
-      width: 330px;
-      height: 330px;
-      border-radius: 50%;
-      background: rgba(184,243,107,.10);
-      filter: blur(65px);
+    .hero-copy > p { max-width: 570px; font-size: 18px; }
+
+    .small-note {
+      font-size: 12px;
+      margin-top: 18px;
+      color: #8998ad;
     }
 
-    .phone {
-      width: 276px;
-      position: relative;
-      z-index: 2;
-      padding: 11px;
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 38px;
-      background: #111b29;
-      box-shadow: 0 35px 100px rgba(0,0,0,.42);
-      transform: rotate(-3deg);
-    }
+    /* Dashboard illustration */
 
-    .phone-screen {
-      min-height: 450px;
-      padding: 22px 17px;
-      overflow: hidden;
+    .mockup-wrap { max-width: 465px; width: 100%; margin: auto; position: relative; }
+
+    .mockup {
+      background: linear-gradient(145deg, #24364c, #152134);
+      border: 1px solid rgba(255,255,255,.13);
       border-radius: 28px;
-      background: #f5f8f2;
-      color: #17271a;
-    }
-
-    .mock-top { display: flex; justify-content: space-between; align-items: center; }
-    .mock-label { color: #718073; font-size: .73rem; }
-    .mock-total { font: 800 1.8rem "Manrope", sans-serif; margin: 5px 0 15px; }
-    .mock-balance {
-      padding: 18px;
-      border-radius: 18px;
-      background: #163c2c;
-      color: white;
-      margin: 16px 0;
-    }
-
-    .mock-balance small { color: #c0d7c5; }
-    .mock-balance strong { display: block; font-size: 1.65rem; margin: 4px 0 12px; }
-    .progress { height: 6px; border-radius: 20px; background: #466552; overflow: hidden; }
-    .progress span { display: block; width: 65%; height: 100%; background: var(--green); border-radius: inherit; }
-
-    .mock-chart {
-      height: 80px;
-      display: flex;
-      align-items: end;
-      justify-content: space-around;
-      gap: 8px;
-      padding: 10px 4px 0;
-    }
-
-    .mock-chart span {
-      width: 14%;
-      border-radius: 6px 6px 2px 2px;
-      background: #bce88c;
-    }
-
-    .mock-chart span:nth-child(1) { height: 45%; }
-    .mock-chart span:nth-child(2) { height: 70%; }
-    .mock-chart span:nth-child(3) { height: 53%; }
-    .mock-chart span:nth-child(4) { height: 88%; background: #438a60; }
-    .mock-chart span:nth-child(5) { height: 63%; }
-    .mock-chart span:nth-child(6) { height: 100%; }
-    .mock-transactions { display: grid; gap: 13px; margin-top: 15px; }
-    .mock-transaction { display: flex; align-items: center; gap: 10px; font-size: .78rem; }
-    .mock-transaction strong { display: block; }
-    .mock-transaction small { color: #718073; }
-    .mock-transaction b { margin-left: auto; white-space: nowrap; }
-
-    .mock-icon {
-      display: grid;
-      place-items: center;
-      width: 35px;
-      height: 35px;
-      border-radius: 12px;
-      background: #e5efdf;
-      font-size: 1rem;
-    }
-
-    .float-card {
-      position: absolute;
-      z-index: 3;
-      padding: 15px 18px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: #11263b;
-      box-shadow: 0 20px 55px rgba(0,0,0,.2);
-    }
-
-    .float-card strong { display: block; font-size: 1.02rem; }
-    .float-card small { color: var(--muted); font-size: .78rem; }
-    .float-one { top: 55px; right: -4px; }
-    .float-two { bottom: 45px; left: -5px; }
-    .float-icon { color: var(--green); font-size: 1.2rem; margin-bottom: 4px; }
-
-    /* Value strip */
-    .value-strip { border-block: 1px solid var(--border); background: rgba(255,255,255,.018); }
-    .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
-    .value-item { padding: 26px 15px; text-align: center; }
-    .value-item + .value-item { border-left: 1px solid var(--border); }
-    .value-item strong { display: block; font-family: "Manrope", sans-serif; }
-    .value-item span { font-size: .86rem; color: var(--muted); }
-
-    /* Features */
-    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .feature-card {
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: linear-gradient(145deg, #10243a, #0b1a2b);
-      transition: border-color .2s, transform .2s;
-    }
-    .feature-card:hover { border-color: rgba(184,243,107,.4); transform: translateY(-4px); }
-    .feature-icon {
-      width: 52px;
-      height: 52px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: rgba(184,243,107,.1);
-      color: var(--green);
-      font-size: 1.45rem;
-      margin-bottom: 23px;
-    }
-    .feature-card h3 { margin-bottom: 10px; }
-    .feature-card p { font-size: .94rem; margin-bottom: 0; }
-
-    /* Highlight */
-    .highlight {
-      background: linear-gradient(135deg, #102a36, #0d2034 65%, #182b32);
-      border-block: 1px solid var(--border);
-    }
-
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .privacy-visual {
-      min-height: 340px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      background:
-        radial-gradient(circle, rgba(184,243,107,.13), transparent 60%),
-        #0a1b2c;
-    }
-
-    .shield {
-      width: 145px;
-      height: 165px;
-      display: grid;
-      place-items: center;
-      color: var(--green);
-      font-size: 4rem;
-      border: 1px solid rgba(184,243,107,.35);
-      border-radius: 65px 65px 70px 70px;
-      background: rgba(184,243,107,.06);
-      box-shadow: 0 0 80px rgba(184,243,107,.08);
-    }
-
-    .check-list { list-style: none; padding: 0; display: grid; gap: 13px; }
-    .check-list li { display: flex; gap: 11px; align-items: flex-start; color: #dce6ef; }
-    .check { color: var(--green); font-weight: 800; }
-
-    /* How it works */
-    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .step-number {
-      width: 45px;
-      height: 45px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: var(--green);
-      color: var(--bg);
-      font-weight: 800;
-    }
-    .step h3 { margin-top: 22px; }
-
-    /* Android CTA */
-    .launch-panel {
+      padding: 25px;
+      box-shadow: 0 30px 85px rgba(0,0,0,.3);
+      transform: rotate(1deg);
       position: relative;
-      overflow: hidden;
-      padding: 65px 30px;
-      border: 1px solid rgba(184,243,107,.24);
-      border-radius: 30px;
-      text-align: center;
-      background:
-        radial-gradient(ellipse at 50% 0%, rgba(184,243,107,.13), transparent 60%),
-        #0d2032;
     }
-    .launch-panel h2 { max-width: 700px; margin: 20px auto; }
-    .launch-panel p { max-width: 620px; margin: 0 auto 25px; }
-    .platform-note { margin-top: 15px !important; font-size: .83rem; }
 
-    /* FAQ */
-    .faq-list { max-width: 800px; margin: auto; }
-    details { border-bottom: 1px solid var(--border); padding: 21px 0; }
-    summary {
-      cursor: pointer;
-      list-style: none;
+    .mockup-head {
       display: flex;
       justify-content: space-between;
-      gap: 20px;
-      font-weight: 700;
+      align-items: center;
+      margin-bottom: 22px;
     }
+
+    .muted-small { color: var(--muted); font-size: 12px; }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 13px;
+      background: rgba(184,243,107,.15);
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .budget-card {
+      background: var(--green);
+      color: #17231a;
+      border-radius: 20px;
+      padding: 22px;
+    }
+
+    .budget-card .muted-small { color: #33472a; }
+
+    .budget-number {
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin: 6px 0 15px;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .progress {
+      height: 6px;
+      background: rgba(0,0,0,.15);
+      border-radius: 8px;
+      margin-top: 9px;
+      overflow: hidden;
+    }
+
+    .progress span {
+      display: block;
+      width: 62%;
+      height: 100%;
+      background: #253b23;
+    }
+
+    .mockup-subhead {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 800;
+      margin: 20px 0 9px;
+    }
+
+    .mockup-subhead span:last-child {
+      font-size: 10px;
+      color: var(--green);
+    }
+
+    .transaction {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .transaction:last-child { border-bottom: 0; }
+
+    .transaction-icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.07);
+      border-radius: 12px;
+      font-size: 19px;
+    }
+
+    .transaction-info { flex: 1; }
+    .transaction-name { font-size: 12px; font-weight: 800; }
+    .transaction-type { font-size: 10px; color: var(--muted); }
+    .transaction-value { font-size: 12px; font-weight: 800; }
+
+    .mockup-footnote {
+      color: var(--muted);
+      font-size: 10px;
+      margin-top: 10px;
+    }
+
+    /* Benefits strip */
+
+    .benefits {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.02);
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 24px 0;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .benefit span { color: var(--green); font-size: 21px; }
+
+    /* Features */
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 19px;
+    }
+
+    .feature-card {
+      padding: 27px;
+      background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.015));
+      border: 1px solid var(--border);
+      border-radius: 21px;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(184,243,107,.4);
+    }
+
+    .feature-icon {
+      width: 51px;
+      height: 51px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: rgba(184,243,107,.1);
+      font-size: 25px;
+      margin-bottom: 21px;
+    }
+
+    .feature-card p { font-size: 14px; }
+
+    /* Privacy */
+
+    .privacy-panel {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      align-items: center;
+      gap: 45px;
+      padding: 45px;
+      border-radius: 27px;
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at 15% 15%, rgba(184,243,107,.08), transparent 42%), var(--panel);
+    }
+
+    .privacy-art {
+      min-height: 245px;
+      display: grid;
+      place-items: center;
+    }
+
+    .privacy-symbol {
+      width: 165px;
+      height: 180px;
+      display: grid;
+      place-items: center;
+      font-size: 70px;
+      border-radius: 48% 48% 42% 42%;
+      border: 1px solid rgba(184,243,107,.32);
+      background: rgba(184,243,107,.08);
+    }
+
+    .privacy-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .privacy-list li {
+      color: #d9e2ed;
+      font-size: 14px;
+    }
+
+    .privacy-list li:before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    /* How it works */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .step {
+      padding: 27px;
+      background: rgba(255,255,255,.025);
+      border-top: 1px solid rgba(184,243,107,.45);
+      border-radius: 0 0 18px 18px;
+    }
+
+    .step-number {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      margin-bottom: 22px;
+    }
+
+    .step p { font-size: 14px; }
+
+    /* FAQ */
+
+    .faq-list {
+      max-width: 790px;
+      margin: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      padding: 20px 22px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: rgba(255,255,255,.025);
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 800;
+      padding-right: 25px;
+      position: relative;
+    }
+
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; color: var(--green); font-size: 1.3rem; }
-    details[open] summary::after { content: "−"; }
-    details p { margin-bottom: 0; }
+
+    summary:after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: -3px;
+      font-size: 21px;
+      color: var(--green);
+    }
+
+    details[open] summary:after { content: "−"; }
+
+    details p { margin-top: 13px; font-size: 14px; }
+
+    /* Download CTA */
+
+    .download-banner {
+      text-align: center;
+      padding: 60px 25px;
+      border-radius: 27px;
+      border: 1px solid rgba(184,243,107,.25);
+      background: radial-gradient(circle at 50% 0%, rgba(184,243,107,.12), transparent 65%), var(--panel);
+    }
+
+    .download-banner h2 { max-width: 690px; margin: 0 auto 17px; }
+    .download-banner p { max-width: 590px; margin: auto; }
+    .download-banner .button-row { justify-content: center; }
 
     /* Footer */
-    footer { border-top: 1px solid var(--border); padding: 40px 0; }
-    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; }
-    .footer-links a, .copyright { color: var(--muted); font-size: .86rem; }
-    .footer-links a:hover { color: var(--green); }
-    .copyright { margin: 10px 0 0; }
 
-    @media (max-width: 900px) {
-      .hero-grid, .highlight-grid { grid-template-columns: 1fr; }
-      .hero-grid { gap: 20px; }
-      .hero-content { text-align: center; }
-      .hero-copy { margin-inline: auto; }
-      .hero-actions { justify-content: center; }
-      .visual-stage { max-width: 540px; width: 100%; margin: auto; }
-      .highlight-grid { gap: 35px; }
-      .privacy-visual { min-height: 260px; }
-      .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .nav-links { gap: 15px; }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 35px 0;
     }
 
-    @media (max-width: 600px) {
-      .container { width: min(100% - 30px, var(--max)); }
-      .section { padding: 72px 0; }
-      nav { min-height: 68px; }
-      .brand { font-size: 1.1rem; }
-      .brand-icon { width: 35px; height: 35px; }
-      .nav-links > a:not(.btn) { display: none; }
-      .hero { padding: 65px 0 55px; }
-      h1 { font-size: clamp(2.5rem, 12vw, 3.6rem); }
-      .hero-copy { font-size: 1rem; }
-      .visual-stage { min-height: 425px; }
-      .phone { width: 245px; }
-      .phone-screen { min-height: 410px; padding: 18px 14px; }
-      .float-one { right: -2px; top: 35px; }
-      .float-two { left: -2px; bottom: 28px; }
-      .float-card { padding: 12px; }
-      .features-grid, .steps-grid { grid-template-columns: 1fr; }
-      .feature-card { padding: 24px; }
-      .value-grid { grid-template-columns: 1fr; }
-      .value-item { padding: 17px; }
-      .value-item + .value-item { border-left: 0; border-top: 1px solid var(--border); }
-      .launch-panel { padding: 48px 20px; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 19px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .copyright { font-size: 12px; margin-top: 12px; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 45px; }
+      .hero-copy { text-align: center; }
+      .hero-copy > p { margin: auto; }
+      .hero-copy .button-row { justify-content: center; }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .privacy-panel { grid-template-columns: 1fr; gap: 12px; }
+      .privacy-art { min-height: 190px; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: calc(100% - 30px); }
+      .section { padding: 65px 0; }
+      .hero { padding: 65px 0; }
+      h1 { font-size: 43px; }
+      .hero-copy > p { font-size: 16px; }
+      .nav-inner { min-height: 67px; }
+      .brand { font-size: 18px; }
+      .brand-mark { width: 35px; height: 35px; }
+      .nav-links { gap: 12px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-cta { padding: 9px 12px; font-size: 12px; }
+      .button-row { flex-direction: column; }
+      .button-row .btn { width: 100%; }
+      .mockup { padding: 17px; }
+      .benefit-grid, .feature-grid, .steps { grid-template-columns: 1fr; }
+      .benefit { justify-content: flex-start; }
+      .privacy-panel { padding: 27px 21px; }
+      .download-banner { padding: 43px 21px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
       .footer-links { gap: 14px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
+      html { scroll-behavior: auto; }
+      *, *:before, *:after { transition: none !important; }
     }
   </style>
 </head>
 
 <body>
-  <header class="nav-wrap">
-    <nav class="container" aria-label="Main navigation">
-      <a href="#" class="brand" aria-label="SpendNest home">
-        <span class="brand-icon" aria-hidden="true">S</span>
-        SpendNest
-      </a>
-      <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#privacy">Privacy</a>
-        <a href="#faq">FAQ</a>
-        <a href="#download" class="btn btn-primary btn-small">Get the app ↗</a>
-      </div>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="brand" aria-label="SpendNest home">
+      <span class="brand-mark">S</span>
+      <span>SpendNest</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#features">Features</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+      <a href="#download" class="nav-cta">Get the app ↗</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <span class="status-pill">
-            <span class="status-dot"></span>
-            Available on iOS · Android coming soon
-          </span>
+<main>
 
-          <h1>Your money.<br>Your <span class="accent">control.</span></h1>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Your money. Your privacy.</div>
 
-          <p class="hero-copy">
-            Meet SpendNest, your personal expense tracker. Understand where
-            your money goes, keep an eye on your spending, and build better
-            financial habits — one day at a time.
-          </p>
+        <h1>
+          Your money deserves a
+          <span class="highlight">clearer picture.</span>
+        </h1>
 
-          <div class="hero-actions" id="download">
-            <!-- Replace YOUR_APP_STORE_URL with your real App Store URL -->
-            <a class="btn btn-primary"
-               href="YOUR_APP_STORE_URL"
-               target="_blank"
-               rel="noopener noreferrer">
-              <span aria-hidden="true"></span> Download for iOS
-            </a>
-            <a class="btn btn-outline" href="#features">
-              Explore features ↓
-            </a>
-          </div>
+        <p>
+          Meet SpendNest, the simple offline expense tracker.
+          Record expenses in seconds, plan your budget, and understand
+          your spending — without needing to create an account.
+        </p>
 
-          <p class="trust-line">
-            Simple expense tracking. A clearer picture of your money.
-          </p>
+        <div class="button-row">
+          <a class="btn btn-primary"
+             href="https://apps.apple.com/us/app/spendnest-expense-tracker/id6812546661"
+             target="_blank" rel="noopener noreferrer">
+            <span class="btn-icon"></span> Download on the App Store
+          </a>
+
+          <a class="btn btn-secondary"
+             href="https://play.google.com/store/apps/details?id=com.rkr.spendnest"
+             target="_blank" rel="noopener noreferrer">
+            <span class="btn-icon">▶</span> Get it on Google Play
+          </a>
         </div>
 
-        <!-- Illustrative dashboard, not a real app screenshot -->
-        <div class="visual-stage" role="img"
-             aria-label="Illustration of a personal finance dashboard with a budget overview, spending chart, and sample transactions">
-          <div class="glow"></div>
-
-          <div class="phone">
-            <div class="phone-screen">
-              <div class="mock-top">
-                <strong style="font-family:Manrope,sans-serif">SpendNest</strong>
-                <span aria-hidden="true">☰</span>
-              </div>
-
-              <p class="mock-label" style="margin-top:24px">TOTAL SPENDING</p>
-              <div class="mock-total">$1,248.50</div>
-
-              <div class="mock-balance">
-                <small>Monthly budget</small>
-                <strong>$2,000.00</strong>
-                <div class="progress"><span></span></div>
-                <small style="display:block;margin-top:9px">Budget overview</small>
-              </div>
-
-              <div class="mock-top">
-                <strong style="font-size:.88rem">Spending overview</strong>
-                <span class="mock-label">This month</span>
-              </div>
-
-              <div class="mock-chart" aria-hidden="true">
-                <span></span><span></span><span></span>
-                <span></span><span></span><span></span>
-              </div>
-
-              <p class="mock-label" style="margin-top:23px">RECENT TRANSACTIONS</p>
-
-              <div class="mock-transactions">
-                <div class="mock-transaction">
-                  <span class="mock-icon">🛒</span>
-                  <span><strong>Groceries</strong><small>Sample transaction</small></span>
-                  <b>−$48.20</b>
-                </div>
-                <div class="mock-transaction">
-                  <span class="mock-icon">☕</span>
-                  <span><strong>Coffee</strong><small>Sample transaction</small></span>
-                  <b>−$5.50</b>
-                </div>
-                <div class="mock-transaction">
-                  <span class="mock-icon">🚆</span>
-                  <span><strong>Transport</strong><small>Sample transaction</small></span>
-                  <b>−$18.00</b>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="float-card float-one">
-            <div class="float-icon" aria-hidden="true">↗</div>
-            <strong>Know your spending</strong>
-            <small>Make informed money decisions</small>
-          </div>
-
-          <div class="float-card float-two">
-            <div class="float-icon" aria-hidden="true">◈</div>
-            <strong>Stay on budget</strong>
-            <small>Keep your goals in view</small>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BENEFITS STRIP -->
-    <section class="value-strip" aria-label="SpendNest benefits">
-      <div class="container value-grid">
-        <div class="value-item">
-          <strong>Track expenses</strong>
-          <span>Understand everyday spending</span>
-        </div>
-        <div class="value-item">
-          <strong>Plan your budget</strong>
-          <span>Keep your financial goals in view</span>
-        </div>
-        <div class="value-item">
-          <strong>Build better habits</strong>
-          <span>Make more informed decisions</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="section" id="features">
-      <div class="container">
-        <div class="section-intro">
-          <span class="eyebrow">Made for everyday money</span>
-          <h2>A simpler way to manage your <span class="accent">expenses</span></h2>
-          <p>
-            Keep your spending organised and make it easier to see the bigger
-            picture. SpendNest brings your everyday expense-tracking routine
-            into one convenient place.
-          </p>
-        </div>
-
-        <div class="features-grid">
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">↗</div>
-            <h3>Expense tracking</h3>
-            <p>Record and organise your expenses so you can better understand
-              your spending patterns and everyday purchases.</p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">◷</div>
-            <h3>Budget planning</h3>
-            <p>Keep your budget in view, review your spending, and make
-              thoughtful decisions about your money.</p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">▥</div>
-            <h3>Spending insights</h3>
-            <p>Use spending summaries and visual breakdowns to make your
-              personal finances easier to understand.</p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">▤</div>
-            <h3>Receipt scanning</h3>
-            <p>Explore a more convenient way to capture purchase details
-              with the receipt-scanning features available in the app.</p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">⌁</div>
-            <h3>Convenient shortcuts</h3>
-            <p>Spend less time navigating and make everyday expense tracking
-              easier with supported shortcuts and quick-access tools.</p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">▦</div>
-            <h3>At-a-glance access</h3>
-            <p>Keep useful financial information close with supported
-              widgets and quick ways to check your spending.</p>
-          </article>
-        </div>
-
-        <p style="text-align:center;font-size:.8rem;margin-top:24px">
-          Feature availability may vary by platform and app version.
+        <p class="small-note">
+          Offline expense tracking · Simple budgets · Spending reports
         </p>
       </div>
-    </section>
 
-    <!-- PRIVACY -->
-    <section class="section highlight" id="privacy">
-      <div class="container highlight-grid">
-        <div class="privacy-visual"
-             role="img"
-             aria-label="Shield illustration representing personal financial privacy">
-          <div class="shield" aria-hidden="true">⬡</div>
+      <!-- Illustrative dashboard, not an actual app screenshot -->
+      <div class="mockup-wrap" aria-label="Illustration of an expense tracker">
+        <div class="mockup">
+          <div class="mockup-head">
+            <div>
+              <div class="muted-small">YOUR OVERVIEW</div>
+              <strong>Spending summary</strong>
+            </div>
+            <div class="avatar">S</div>
+          </div>
+
+          <div class="budget-card">
+            <div class="muted-small">Example monthly budget</div>
+            <div class="budget-number">$2,450.00</div>
+            <div class="progress-label">
+              <span>Budget progress</span><span>62% used</span>
+            </div>
+            <div class="progress"><span></span></div>
+          </div>
+
+          <div class="mockup-subhead">
+            <span>Recent expenses</span>
+            <span>DEMO DATA</span>
+          </div>
+
+          <div class="transaction">
+            <div class="transaction-icon">☕</div>
+            <div class="transaction-info">
+              <div class="transaction-name">Coffee</div>
+              <div class="transaction-type">Food & drink</div>
+            </div>
+            <div class="transaction-value">-$4.50</div>
+          </div>
+
+          <div class="transaction">
+            <div class="transaction-icon">🛒</div>
+            <div class="transaction-info">
+              <div class="transaction-name">Groceries</div>
+              <div class="transaction-type">Shopping</div>
+            </div>
+            <div class="transaction-value">-$48.20</div>
+          </div>
+
+          <div class="transaction">
+            <div class="transaction-icon">🚆</div>
+            <div class="transaction-info">
+              <div class="transaction-name">Transport</div>
+              <div class="transaction-type">Travel</div>
+            </div>
+            <div class="transaction-value">-$12.00</div>
+          </div>
+
+          <div class="mockup-footnote">
+            Illustrative figures for design purposes only.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits" aria-label="SpendNest highlights">
+    <div class="container benefit-grid">
+      <div class="benefit"><span>✓</span> Track expenses offline</div>
+      <div class="benefit"><span>✓</span> Plan your budget</div>
+      <div class="benefit"><span>✓</span> Review spending reports</div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-intro">
+        <div class="eyebrow">Simple by design</div>
+        <h2>Everything you need to understand your <span class="highlight">spending.</span></h2>
+        <p>
+          SpendNest focuses on the essentials: recording expenses,
+          planning a budget, and reviewing your spending with a clear,
+          straightforward experience.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon">📴</div>
+          <h3>100% offline tracking</h3>
+          <p>
+            Record and review your expenses without depending on an
+            internet connection. Your financial records stay on your device.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Fast expense entry</h3>
+          <p>
+            Add transactions in just a few taps and keep a useful record
+            of everyday purchases without unnecessary complexity.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Budget planning</h3>
+          <p>
+            Set spending limits and use your budget as a guide to help
+            you stay focused on your financial priorities.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Smart spending reports</h3>
+          <p>
+            Explore clear charts and summaries to better understand
+            your expenses and see where your money goes.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🔐</div>
+          <h3>Privacy-focused design</h3>
+          <p>
+            Your financial records remain on your device. SpendNest
+            does not require you to create an account or use cloud sync.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">✨</div>
+          <h3>Clean and simple</h3>
+          <p>
+            Enjoy a straightforward expense-tracking approach that helps
+            you focus on your finances rather than complicated workflows.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works"
+           style="background:rgba(255,255,255,.018)">
+    <div class="container">
+      <div class="section-intro">
+        <div class="eyebrow">Get started</div>
+        <h2>A simpler way to build better <span class="highlight">money habits.</span></h2>
+        <p>
+          Turn everyday expense tracking into a simple routine with
+          three practical steps.
+        </p>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <div class="step-number">STEP 01</div>
+          <h3>Record your expenses</h3>
+          <p>
+            Add each transaction in a few taps and keep your spending
+            history organized on your device.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">STEP 02</div>
+          <h3>Set a budget</h3>
+          <p>
+            Create spending limits that help you plan your money and
+            stay mindful of your priorities.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">STEP 03</div>
+          <h3>Review your reports</h3>
+          <p>
+            Use charts and summaries to understand your spending and
+            make more informed decisions.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="privacy">
+    <div class="container">
+      <div class="privacy-panel">
+        <div class="privacy-art" aria-hidden="true">
+          <div class="privacy-symbol">🔒</div>
         </div>
 
         <div>
-          <span class="eyebrow">Your money is personal</span>
-          <h2>More clarity. <span class="accent">More peace of mind.</span></h2>
+          <div class="eyebrow">Your money. Your device.</div>
+          <h2>Expense tracking with <span class="highlight">privacy in mind.</span></h2>
           <p>
-            Your financial information deserves thoughtful handling.
-            SpendNest is designed to help you organise your personal
-            expenses while keeping privacy in mind.
+            Your financial records should not need a cloud account
+            just to stay organized. SpendNest is designed for offline
+            use, with no mandatory sign-up and no cloud sync.
           </p>
 
-          <ul class="check-list">
-            <li><span class="check">✓</span><span>Review the app's privacy
-              information to understand how your data is handled.</span></li>
-            <li><span class="check">✓</span><span>Explore supported offline
-              expense-tracking capabilities.</span></li>
-            <li><span class="check">✓</span><span>Check the privacy policy
-              for details about storage, permissions, and data practices.</span></li>
+          <ul class="privacy-list">
+            <li>Track your expenses offline.</li>
+            <li>No account required to get started.</li>
+            <li>Your financial records stay on your device.</li>
+            <li>No dependency on cloud syncing.</li>
           </ul>
 
-          <!-- Replace with your actual privacy policy URL -->
-          <a class="btn btn-outline" href="privacy-policy.html">
-            Read our privacy policy →
-          </a>
+          <div class="button-row">
+            <a class="btn btn-secondary"
+               href="https://apps.apple.com/us/app/spendnest-expense-tracker/id6812546661"
+               target="_blank" rel="noopener noreferrer">
+              View App Store details ↗
+            </a>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- HOW IT WORKS -->
-    <section class="section">
-      <div class="container">
-        <div class="section-intro">
-          <span class="eyebrow">A clearer financial routine</span>
-          <h2>Make every expense <span class="accent">count</span></h2>
-          <p>A straightforward routine can help you become more aware of
-            where your money goes.</p>
-        </div>
-
-        <div class="steps-grid">
-          <article class="step">
-            <div class="step-number">01</div>
-            <h3>Record your spending</h3>
-            <p>Keep track of purchases and organise your everyday expenses
-              in one place.</p>
-          </article>
-
-          <article class="step">
-            <div class="step-number">02</div>
-            <h3>Review your habits</h3>
-            <p>Look at your spending summaries and identify patterns
-              that matter to you.</p>
-          </article>
-
-          <article class="step">
-            <div class="step-number">03</div>
-            <h3>Plan with confidence</h3>
-            <p>Use what you learn to make more informed choices and
-              work towards your financial goals.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ANDROID ANNOUNCEMENT -->
-    <section class="section" style="padding-top:10px">
-      <div class="container">
-        <div class="launch-panel">
-          <span class="status-pill">
-            <span class="status-dot"></span>
-            Android launch update
-          </span>
-
-          <h2>Your finances are getting a new home on <span class="accent">Android.</span></h2>
-
-          <p>
-            SpendNest is already available on iOS, and we're working towards
-            bringing the expense-tracking experience to Android.
-            Follow along for launch updates.
-          </p>
-
-          <a class="btn btn-primary"
-             href="YOUR_APP_STORE_URL"
-             target="_blank"
-             rel="noopener noreferrer">
-            Explore SpendNest on iOS ↗
-          </a>
-
-          <p class="platform-note">
-            Android availability will be announced when the app is ready.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-intro">
-          <span class="eyebrow">Frequently asked questions</span>
-          <h2>Questions about <span class="accent">SpendNest?</span></h2>
-          <p>Find out more about the expense tracker and its availability.</p>
-        </div>
-
-        <div class="faq-list">
-          <details>
-            <summary>What is SpendNest?</summary>
-            <p>SpendNest is a personal expense tracker designed to help you
-              organise expenses, review spending patterns, and manage your
-              personal budget.</p>
-          </details>
-
-          <details>
-            <summary>Is SpendNest available on iPhone?</summary>
-            <p>Yes. SpendNest is available on iOS. Use the App Store link
-              on this page to visit the official listing.</p>
-          </details>
-
-          <details>
-            <summary>When will SpendNest launch on Android?</summary>
-            <p>The Android version is in preparation. Check this website
-              or the official social channels for updates on availability.</p>
-          </details>
-
-          <details>
-            <summary>Can I track expenses offline?</summary>
-            <p>SpendNest includes offline expense-tracking capabilities.
-              Check the app's current documentation for details about
-              which features work without an internet connection.</p>
-          </details>
-
-          <details>
-            <summary>Does SpendNest support receipt scanning?</summary>
-            <p>Receipt-scanning functionality is among the features
-              associated with SpendNest. Check the current app listing
-              for availability and platform-specific details.</p>
-          </details>
-
-          <details>
-            <summary>How can I learn about SpendNest's privacy practices?</summary>
-            <p>Read the official privacy policy linked on this website
-              for details about data collection, storage, and processing.</p>
-          </details>
-
-          <details>
-            <summary>Is SpendNest free?</summary>
-            <p>Check the official App Store listing for current pricing,
-              in-app purchases, and subscription information.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container footer-inner">
-      <div>
-        <a href="#" class="brand">
-          <span class="brand-icon" aria-hidden="true">S</span>
-          SpendNest
-        </a>
-        <p class="copyright">
-          © <span id="year">2026</span> SpendNest. All rights reserved.
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-intro">
+        <div class="eyebrow">Frequently asked questions</div>
+        <h2>Get to know <span class="highlight">SpendNest.</span></h2>
+        <p>
+          A few helpful answers about offline expense tracking,
+          budgeting, and spending reports.
         </p>
       </div>
 
-      <div class="footer-links">
-        <a href="#features">Features</a>
-        <a href="#privacy">Privacy</a>
-        <a href="#faq">FAQ</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <!-- Replace with your actual support email -->
-        <a href="mailto:YOUR_SUPPORT_EMAIL">Contact</a>
+      <div class="faq-list">
+        <details>
+          <summary>What is SpendNest?</summary>
+          <p>
+            SpendNest is a personal expense tracker that helps you
+            record transactions, create budgets, and understand your
+            spending with charts and summaries.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I use SpendNest offline?</summary>
+          <p>
+            Yes. SpendNest is designed to track expenses and manage
+            your budget offline without depending on a cloud connection.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do I need to create an account?</summary>
+          <p>
+            No account is required to use SpendNest according to its
+            App Store description.
+          </p>
+        </details>
+
+        <details>
+          <summary>How can SpendNest help with budgeting?</summary>
+          <p>
+            You can set spending limits and review your spending to
+            help you stay aware of your budget and financial priorities.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I see where my money goes?</summary>
+          <p>
+            SpendNest provides charts and summaries to help you
+            understand your spending and review your expenses.
+          </p>
+        </details>
+
+        <details>
+          <summary>Does SpendNest use cloud sync?</summary>
+          <p>
+            The iOS App Store listing describes SpendNest as an offline
+            app with no cloud sync. Check each platform's listing for
+            platform-specific details.
+          </p>
+        </details>
+
+        <details>
+          <summary>Where can I download SpendNest?</summary>
+          <p>
+            Use the App Store or Google Play buttons on this page.
+            Available features and compatibility may vary by platform.
+          </p>
+        </details>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <section class="section" id="download">
+    <div class="container">
+      <div class="download-banner">
+        <div class="eyebrow">Start tracking today</div>
+        <h2>
+          A clearer view of your money starts with
+          <span class="highlight">SpendNest.</span>
+        </h2>
+        <p>
+          Track expenses, plan your budget, and understand your
+          spending with a simple approach to personal finance.
+        </p>
+
+        <div class="button-row">
+          <a class="btn btn-primary"
+             href="https://apps.apple.com/us/app/spendnest-expense-tracker/id6812546661"
+             target="_blank" rel="noopener noreferrer">
+            <span class="btn-icon"></span> Download on the App Store
+          </a>
+
+          <a class="btn btn-secondary"
+             href="https://play.google.com/store/apps/details?id=com.rkr.spendnest"
+             target="_blank" rel="noopener noreferrer">
+            <span class="btn-icon">▶</span> Get it on Google Play
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <a href="#home" class="brand">
+        <span class="brand-mark">S</span>
+        <span>SpendNest</span>
+      </a>
+      <p class="copyright">
+        © <span id="year">2026</span> SpendNest. All rights reserved.
+      </p>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="#features">Features</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://apps.apple.com/us/app/spendnest-expense-tracker/id6812546661"
+         target="_blank" rel="noopener noreferrer">App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=com.rkr.spendnest"
+         target="_blank" rel="noopener noreferrer">Google Play</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
 </body>
 </html>
+```
