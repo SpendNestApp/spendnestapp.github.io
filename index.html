@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>SpendNest – Offline Expense Tracker & Budget Planner</title>
 
-<meta name="description" content="Track expenses offline with SpendNest. Record transactions in seconds, set budgets, view spending charts and summaries, and keep your financial data on your device.">
+<meta name="description" content="SpendNest helps you track expenses offline, plan budgets, and understand your spending with beautiful charts while keeping your financial data private on your device.">
 
-<meta name="keywords" content="SpendNest, offline expense tracker, budget planner app, personal finance app, expense tracking, spending reports, private expense tracker">
+<meta name="keywords" content="SpendNest, offline expense tracker, budget planner, expense tracker app, personal finance app, spending reports">
 
 <meta name="author" content="SpendNest">
+
 <meta name="robots" content="index, follow">
+
 <meta name="theme-color" content="#061A20">
+
 
 <link rel="canonical" href="https://spendnestapp.github.io/">
 
+
 <meta property="og:type" content="website">
 <meta property="og:title" content="SpendNest – Your Money. Your Privacy.">
-<meta property="og:description" content="Track expenses, plan your budget, and understand your spending with SpendNest.">
+<meta property="og:description" content="Track expenses offline, plan budgets, and understand your spending with SpendNest.">
 <meta property="og:url" content="https://spendnestapp.github.io/">
 <meta property="og:site_name" content="SpendNest">
+
 
 <meta name="apple-itunes-app" content="app-id=6812546661">
 
@@ -32,16 +40,16 @@
  "name":"SpendNest - Expense Tracker",
  "applicationCategory":"FinanceApplication",
  "operatingSystem":"iOS, Android",
- "description":"An offline expense tracker for recording transactions, planning budgets, and reviewing spending reports.",
+ "description":"Offline expense tracker for recording transactions, planning budgets and reviewing spending.",
  "url":"https://spendnestapp.github.io/",
  "downloadUrl":[
-   "https://apps.apple.com/us/app/spendnest-expense-tracker/id6812546661",
-   "https://play.google.com/store/apps/details?id=com.rkr.spendnest"
+ "https://apps.apple.com/us/app/spendnest-expense-tracker/id6812546661",
+ "https://play.google.com/store/apps/details?id=com.rkr.spendnest"
  ],
  "offers":{
-   "@type":"Offer",
-   "price":"0",
-   "priceCurrency":"USD"
+  "@type":"Offer",
+  "price":"0",
+  "priceCurrency":"USD"
  }
 }
 </script>
@@ -49,373 +57,644 @@
 
 <style>
 
-:root{
+
+:root {
+
 --bg:#061A20;
 --panel:#0D2B34;
---card:#0D2B34;
+--card:#102F38;
 --text:#ffffff;
 --muted:#b7d2d2;
---green:#28D9B3;
---green-dark:#20b99a;
+
+--accent:#28D9B3;
+--accent-dark:#20b99a;
+
 --border:rgba(40,217,179,.18);
+
 --max:1120px;
+
 }
 
 
-*{
+
+* {
+
 box-sizing:border-box;
 margin:0;
 padding:0;
+
 }
 
 
-html{
+
+html {
+
 scroll-behavior:smooth;
-scroll-padding-top:80px;
+scroll-padding-top:90px;
+
 }
 
 
-body{
+
+body {
+
 background:var(--bg);
 color:var(--text);
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",
-Roboto,Arial,sans-serif;
+
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Arial,
+sans-serif;
+
 line-height:1.65;
+
 overflow-x:hidden;
+
 }
 
 
-a{
+
+a {
+
 color:inherit;
 text-decoration:none;
+
 }
 
 
-.container{
+
+.container {
+
 width:min(var(--max),calc(100% - 40px));
 margin:auto;
+
 }
 
 
-.section{
-padding:80px 0;
+
+.section {
+
+padding:90px 0;
+
 }
 
 
-h1,h2,h3{
-line-height:1.17;
-letter-spacing:-.6px;
+
+h1,h2,h3 {
+
+line-height:1.15;
+letter-spacing:-.7px;
+
 }
 
 
-h1{
-font-size:clamp(40px,6vw,64px);
-margin-bottom:22px;
+
+h1 {
+
+font-size:clamp(42px,6vw,68px);
+margin-bottom:25px;
+
 }
 
 
-h2{
-font-size:clamp(30px,4vw,42px);
+
+h2 {
+
+font-size:clamp(32px,4vw,45px);
 margin-bottom:18px;
+
 }
 
 
-h3{
-font-size:20px;
+
+h3 {
+
+font-size:21px;
 margin-bottom:12px;
+
 }
 
 
-p{
+
+p {
+
 color:var(--muted);
+
 }
 
 
-.highlight{
-color:var(--green);
+
+.highlight {
+
+color:var(--accent);
+
 }
 
 
-.eyebrow{
-color:var(--green);
-text-transform:uppercase;
-letter-spacing:2px;
+
+.eyebrow {
+
+color:var(--accent);
+
 font-size:12px;
-font-weight:800;
+font-weight:900;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
 margin-bottom:15px;
+
 }
 
-
-.section-intro{
-max-width:700px;
-margin:0 auto 45px;
-text-align:center;
-}
-
-
-.section-intro p{
-margin-top:12px;
-}
 
 
 /* Navigation */
 
 
-.navbar{
+.navbar {
+
 position:sticky;
 top:0;
-z-index:10;
-background:rgba(6,26,32,.92);
-backdrop-filter:blur(15px);
+
+z-index:20;
+
+background:
+rgba(6,26,32,.88);
+
+backdrop-filter:blur(18px);
+
 border-bottom:1px solid var(--border);
+
 }
 
 
-.nav-inner{
-min-height:75px;
+
+.nav-inner {
+
+min-height:78px;
+
 display:flex;
 align-items:center;
 justify-content:space-between;
+
 }
 
 
-.brand{
+
+.brand {
+
 display:flex;
+
 align-items:center;
-gap:10px;
-font-size:21px;
-font-weight:850;
-}
 
+gap:12px;
 
-.brand-mark{
-width:40px;
-height:40px;
-display:grid;
-place-items:center;
-background:var(--green);
-color:#061A20;
-border-radius:13px;
+font-size:22px;
+
 font-weight:900;
+
 }
 
 
-.nav-links{
+
+.brand-mark {
+
+width:44px;
+
+height:44px;
+
+border-radius:14px;
+
+overflow:hidden;
+
 display:flex;
-gap:25px;
+
 align-items:center;
-color:var(--muted);
+
+justify-content:center;
+
+box-shadow:
+0 10px 30px rgba(40,217,179,.35);
+
+}
+
+
+
+.brand-mark img {
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+
+.nav-links {
+
+display:flex;
+
+align-items:center;
+
+gap:25px;
+
 font-size:14px;
+
+color:var(--muted);
+
 }
 
 
-.nav-links a:hover{
-color:var(--green);
+
+.nav-links a:hover {
+
+color:var(--accent);
+
 }
 
 
-.nav-cta{
-background:var(--green);
+
+.nav-cta {
+
+background:var(--accent);
+
 color:#061A20!important;
-padding:10px 17px;
+
+padding:11px 18px;
+
 border-radius:999px;
-font-weight:800;
+
+font-weight:900;
+
 }
+
+
 
 
 /* Buttons */
 
 
-.button-row{
+.button-row {
+
 display:flex;
+
 gap:12px;
+
 flex-wrap:wrap;
-margin-top:28px;
+
+margin-top:30px;
+
 }
 
 
-.btn{
-min-height:50px;
+
+.btn {
+
+min-height:52px;
+
+padding:14px 22px;
+
+border-radius:14px;
+
 display:inline-flex;
+
 align-items:center;
+
 justify-content:center;
-gap:8px;
-padding:13px 20px;
-border-radius:12px;
+
+gap:10px;
+
 font-size:14px;
-font-weight:800;
-transition:.2s;
+
+font-weight:900;
+
+transition:.25s;
+
 }
 
 
-.btn:hover{
-transform:translateY(-3px);
+
+.btn:hover {
+
+transform:translateY(-4px);
+
 }
 
 
-.btn-primary{
-background:var(--green);
+
+.btn-primary {
+
+background:var(--accent);
+
 color:#061A20;
+
 }
 
 
-.btn-primary:hover{
-background:var(--green-dark);
+
+.btn-primary:hover {
+
+background:var(--accent-dark);
+
 }
 
 
-.btn-secondary{
-border:1px solid var(--green);
-color:var(--green);
+
+.btn-secondary {
+
+border:1px solid var(--accent);
+
+color:var(--accent);
+
 background:transparent;
+
 }
 
 
-.btn-secondary:hover{
+
+.btn-secondary:hover {
+
 background:rgba(40,217,179,.12);
+
 }
 
 
-.btn-icon{
+
+.btn-icon {
+
 font-size:20px;
+
 }
+
 
 
 /* Hero */
 
 
-.hero{
-padding:85px 0;
+.hero {
+
+padding:95px 0;
+
+position:relative;
+
+overflow:hidden;
+
 }
 
 
-.hero-grid{
+
+.hero:before {
+
+content:"";
+
+position:absolute;
+
+width:550px;
+
+height:550px;
+
+right:-200px;
+
+top:-180px;
+
+background:rgba(40,217,179,.14);
+
+filter:blur(100px);
+
+border-radius:50%;
+
+}
+
+
+
+.hero-grid {
+
 display:grid;
-grid-template-columns:1fr 1fr;
+
+grid-template-columns:1.05fr .95fr;
+
 align-items:center;
-gap:50px;
+
+gap:55px;
+
+position:relative;
+
 }
 
 
-.hero-copy>p{
-max-width:560px;
-font-size:18px;
+
+.hero-copy>p {
+
+max-width:580px;
+
+font-size:19px;
+
 }
 
 
-.mockup-wrap{
-width:100%;
+
+.mockup-wrap {
+
 max-width:520px;
+
 margin:auto;
+
 }
 
 
-.app-image{
+
+.app-image {
+
 width:100%;
-max-width:520px;
-border-radius:24px;
-box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+border-radius:30px;
+
+border:1px solid rgba(40,217,179,.25);
+
+box-shadow:
+
+0 30px 80px rgba(0,0,0,.5),
+
+0 0 40px rgba(40,217,179,.15);
+
+transition:.35s;
+
 }
 
 
-/* Benefits */
 
+.app-image:hover {
 
-.benefits{
-border-top:1px solid var(--border);
-border-bottom:1px solid var(--border);
-background:rgba(255,255,255,.02);
+transform:translateY(-8px);
+
 }
 
-
-.benefit-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:25px 0;
-}
-
-
-.benefit{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10px;
-font-weight:750;
-font-size:14px;
-}
-
-
-.benefit span{
-color:var(--green);
-font-size:22px;
-}
 
 
 /* Feature Cards */
 
 
-.feature-grid{
+.feature-grid {
+
 display:grid;
+
 grid-template-columns:repeat(3,1fr);
-gap:20px;
+
+gap:22px;
+
 }
 
 
-.feature-card{
-padding:28px;
-background:#0D2B34;
-border-radius:18px;
-border:1px solid rgba(40,217,179,.15);
-transition:.2s;
+
+.feature-card {
+
+padding:30px;
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,255,255,.05),
+rgba(255,255,255,.01)
+),
+
+var(--card);
+
+border-radius:22px;
+
+border:1px solid var(--border);
+
+transition:.3s;
+
 }
 
 
-.feature-card:hover{
-transform:translateY(-5px);
-border-color:var(--green);
+
+.feature-card:hover {
+
+transform:translateY(-8px);
+
+border-color:var(--accent);
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.25);
+
 }
 
 
-.feature-icon{
-width:50px;
-height:50px;
+
+.feature-icon {
+
+width:52px;
+
+height:52px;
+
 display:grid;
+
 place-items:center;
-border-radius:14px;
+
+border-radius:16px;
+
 background:rgba(40,217,179,.12);
-font-size:24px;
+
+font-size:25px;
+
 margin-bottom:20px;
+
 }
 
 
-.feature-card p{
-font-size:14px;
+
+/* Benefits */
+
+
+.benefits {
+
+border-top:1px solid var(--border);
+
+border-bottom:1px solid var(--border);
+
+background:rgba(255,255,255,.02);
+
 }
 
 
-/* Responsive */
+
+.benefit-grid {
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+padding:28px 0;
+
+gap:20px;
+
+}
+
+
+
+.benefit {
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:10px;
+
+font-weight:800;
+
+}
+
+
+
+.benefit span {
+
+color:var(--accent);
+
+font-size:22px;
+
+}
+
 
 
 @media(max-width:900px){
 
 .hero-grid{
+
 grid-template-columns:1fr;
+
 text-align:center;
+
 }
 
 .hero-copy>p{
+
 margin:auto;
+
 }
 
 .hero-copy .button-row{
+
 justify-content:center;
+
 }
 
 
 .feature-grid{
+
 grid-template-columns:repeat(2,1fr);
+
 }
+
 
 }
 
@@ -423,83 +702,139 @@ grid-template-columns:repeat(2,1fr);
 @media(max-width:620px){
 
 .container{
+
 width:calc(100% - 30px);
+
 }
 
 
 .nav-links a:not(.nav-cta){
+
 display:none;
+
 }
 
 
 .feature-grid,
+
 .benefit-grid{
+
 grid-template-columns:1fr;
+
 }
 
 
 .button-row{
+
 flex-direction:column;
+
 }
 
 
 .btn{
+
 width:100%;
+
 }
 
 }
+
 
 </style>
 
 </head>
+
+
 <body>
 <header class="navbar">
+
 <div class="container nav-inner">
 
+
 <a href="#home" class="brand">
-<span class="brand-mark">S</span>
-<span>SpendNest</span>
+
+<span class="brand-mark">
+<img src="appIcon.png" alt="SpendNest app icon">
+</span>
+
+<span>
+SpendNest
+</span>
+
 </a>
 
+
+
 <nav class="nav-links">
+
 <a href="#features">Features</a>
+
 <a href="#privacy">Privacy</a>
+
 <a href="#faq">FAQ</a>
-<a href="#download" class="nav-cta">Get the app ↗</a>
+
+<a href="#download" class="nav-cta">
+Get the app ↗
+</a>
+
 </nav>
 
+
 </div>
+
 </header>
+
+
+
 
 
 <main>
 
 
+
+
+
 <!-- HERO -->
 
+
 <section class="hero" id="home">
+
 
 <div class="container hero-grid">
 
 
+
 <div class="hero-copy">
+
 
 <div class="eyebrow">
 Your money. Your privacy.
 </div>
 
 
+
 <h1>
+
 See where your
-<span class="highlight">money goes.</span>
+
+<span class="highlight">
+money goes.
+</span>
+
 </h1>
 
 
+
 <p>
-SpendNest helps you track expenses offline, plan budgets,
-and understand your spending with beautiful charts while
-keeping your financial data on your device.
+
+SpendNest helps you track expenses offline,
+plan budgets, and understand your spending
+with beautiful charts while keeping your
+financial data private on your device.
+
 </p>
+
+
 
 
 <div class="button-row">
@@ -507,21 +842,30 @@ keeping your financial data on your device.
 
 <a class="btn btn-primary"
 href="https://apps.apple.com/us/app/spendnest-expense-tracker/id6812546661"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 
-<span class="btn-icon"></span>
-Download on the App Store
+<span class="btn-icon">
+
+</span>
+
+Download on App Store
 
 </a>
+
 
 
 
 <a class="btn btn-secondary"
 href="https://play.google.com/store/apps/details?id=com.rkr.spendnest"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 
-<span class="btn-icon">▶</span>
-Get it on Google Play
+<span class="btn-icon">
+▶
+</span>
+
+Google Play
 
 </a>
 
@@ -529,56 +873,90 @@ Get it on Google Play
 </div>
 
 
+
 </div>
+
+
+
 
 
 
 <div class="mockup-wrap">
 
+
 <img
+
 src="SpendNestWebsite Image.png"
+
 alt="SpendNest app screenshots"
+
 class="app-image">
 
+
 </div>
 
 
+
+
 </div>
+
 
 </section>
 
 
 
 
-<!-- HIGHLIGHTS -->
+
+
+
+<!-- BENEFITS -->
 
 
 <section class="benefits">
 
+
 <div class="container benefit-grid">
 
 
-<div class="benefit">
-<span>✓</span>
-Track expenses offline
-</div>
-
 
 <div class="benefit">
+
 <span>✓</span>
-Plan your budget
+
+Offline Expense Tracking
+
 </div>
+
 
 
 <div class="benefit">
+
 <span>✓</span>
-Review spending reports
+
+Smart Budget Planning
+
 </div>
 
 
+
+<div class="benefit">
+
+<span>✓</span>
+
+Clear Spending Reports
+
 </div>
+
+
+
+</div>
+
 
 </section>
+
+
+
+
 
 
 
@@ -589,31 +967,44 @@ Review spending reports
 
 <section class="section" id="features">
 
+
 <div class="container">
 
 
 <div class="section-intro">
 
+
 <div class="eyebrow">
-Simple by design
+Powerful & Simple
 </div>
 
 
+
 <h2>
-Everything you need to understand your
-<span class="highlight">spending.</span>
+
+Everything you need to manage your
+
+<span class="highlight">
+money.
+</span>
+
 </h2>
 
 
+
 <p>
-SpendNest focuses on the essentials:
-recording expenses, planning budgets,
-and reviewing your spending with clear charts
-and summaries.
+
+SpendNest focuses on what matters:
+tracking expenses, managing budgets,
+and understanding your financial habits.
+
 </p>
 
 
 </div>
+
+
+
 
 
 
@@ -622,120 +1013,172 @@ and summaries.
 
 
 
+
+
 <div class="feature-card">
 
-<div class="feature-icon">📴</div>
+<div class="feature-icon">
+📴
+</div>
+
 
 <h3>
 Offline Tracking
 </h3>
 
+
 <p>
-Track expenses anytime without requiring
-an internet connection. Your records stay
-available on your device.
+Record expenses anytime without needing
+an internet connection. Your information
+stays available on your device.
 </p>
+
 
 </div>
 
 
 
 
+
+
+
 <div class="feature-card">
 
-<div class="feature-icon">⚡</div>
+<div class="feature-icon">
+⚡
+</div>
+
 
 <h3>
-Fast Expense Entry
+Quick Expense Entry
 </h3>
 
+
 <p>
-Add transactions quickly and keep your
-daily spending organised with minimal effort.
+Add daily transactions in seconds with
+a simple and distraction-free experience.
 </p>
+
 
 </div>
 
 
 
 
+
+
+
 <div class="feature-card">
 
-<div class="feature-icon">🎯</div>
+<div class="feature-icon">
+🎯
+</div>
+
 
 <h3>
 Budget Planning
 </h3>
 
+
 <p>
-Create monthly budgets and monitor your
-progress toward your financial goals.
+Create budgets and monitor your spending
+progress throughout the month.
 </p>
+
 
 </div>
 
 
 
 
+
+
+
 <div class="feature-card">
 
-<div class="feature-icon">📊</div>
+<div class="feature-icon">
+📊
+</div>
+
 
 <h3>
-Statistics & Charts
+Charts & Statistics
 </h3>
 
+
 <p>
-Beautiful reports help you understand where
-your money goes and identify spending trends.
+Understand your spending patterns with
+clear reports and visual summaries.
 </p>
+
 
 </div>
 
 
 
 
+
+
+
 <div class="feature-card">
 
-<div class="feature-icon">🔐</div>
+<div class="feature-icon">
+🔐
+</div>
+
 
 <h3>
 Privacy First
 </h3>
 
+
 <p>
-No mandatory account. Your financial data
-stays on your device.
+No mandatory account. Your financial
+records remain on your device.
 </p>
 
+
 </div>
+
+
+
 
 
 
 
 <div class="feature-card">
 
-<div class="feature-icon">✨</div>
+<div class="feature-icon">
+✨
+</div>
+
 
 <h3>
-Clean Experience
+Beautiful Experience
 </h3>
 
+
 <p>
-A simple interface designed to help you focus
-on better money habits.
+A clean interface designed to make
+money management easier.
 </p>
 
-</div>
-
-
 
 </div>
 
 
+
+
 </div>
+
+
+</div>
+
 
 </section>
+
+
+
 
 
 
@@ -747,43 +1190,66 @@ on better money habits.
 
 <section class="section" id="privacy">
 
+
 <div class="container">
 
 
 <div class="feature-card">
 
 
+
 <div class="eyebrow">
-Your money. Your device.
+Privacy Focused
 </div>
 
 
+
+
 <h2>
-Expense tracking with
-<span class="highlight">privacy in mind.</span>
+
+Your money stays with
+
+<span class="highlight">
+you.
+</span>
+
 </h2>
 
 
-<p>
-Your financial records should not need a cloud
-account just to stay organised. SpendNest is
-designed for offline use with no mandatory
-sign-up.
-</p>
-
-
-<br>
 
 
 <p>
-✓ Track expenses offline.
-<br>
-✓ No account required.
-<br>
-✓ Data stays on your device.
-<br>
-✓ No dependency on cloud sync.
+
+SpendNest is designed for people who want
+simple expense tracking without unnecessary
+accounts or cloud dependency.
+
 </p>
+
+
+
+<br>
+
+
+
+<p>
+
+✓ Offline-first expense tracking
+
+<br>
+
+✓ No mandatory sign-up
+
+<br>
+
+✓ Data stored on your device
+
+<br>
+
+✓ Simple private finance management
+
+</p>
+
 
 
 
@@ -791,10 +1257,12 @@ sign-up.
 
 
 <a class="btn btn-secondary"
+
 href="https://apps.apple.com/us/app/spendnest-expense-tracker/id6812546661"
+
 target="_blank">
 
-View App Store details ↗
+View App Store
 
 </a>
 
@@ -802,12 +1270,16 @@ View App Store details ↗
 </div>
 
 
+
 </div>
 
 
 </div>
+
 
 </section>
+
+
 
 
 
@@ -824,26 +1296,29 @@ View App Store details ↗
 <div class="container">
 
 
+
 <div class="section-intro">
 
+
 <div class="eyebrow">
-Frequently Asked Questions
+FAQ
 </div>
 
 
 <h2>
-Get to know
-<span class="highlight">SpendNest.</span>
+
+Questions about
+
+<span class="highlight">
+SpendNest.
+</span>
+
 </h2>
 
 
-<p>
-Helpful answers about offline expense tracking
-and budgeting.
-</p>
-
-
 </div>
+
+
 
 
 
@@ -856,135 +1331,205 @@ and budgeting.
 What is SpendNest?
 </h3>
 
+
 <p>
-SpendNest is a personal expense tracker that
-helps you record transactions, create budgets,
-and understand your spending.
+SpendNest is an offline expense tracker
+that helps you record spending, create
+budgets, and understand your finances.
 </p>
 
 
+
 <br>
+
 
 
 <h3>
 Can I use SpendNest offline?
 </h3>
 
+
 <p>
-Yes. SpendNest is designed to work without
-depending on a cloud connection.
+Yes. SpendNest is designed to work
+without requiring a constant internet
+connection.
 </p>
 
 
+
 <br>
+
 
 
 <h3>
 Do I need an account?
 </h3>
 
+
 <p>
-No account is required to start using SpendNest.
+No account is required to start tracking
+your expenses.
 </p>
 
 
+
 <br>
+
 
 
 <h3>
-Does SpendNest use cloud sync?
+Does SpendNest store my data online?
 </h3>
 
+
 <p>
-SpendNest focuses on offline storage and keeping
-your financial records on your device.
+SpendNest focuses on keeping your
+financial information on your device.
 </p>
 
 
+
 <br>
+
 
 
 <h3>
 Where can I download SpendNest?
 </h3>
 
+
 <p>
-You can download SpendNest from the App Store
-or Google Play.
+You can download SpendNest from the
+Apple App Store or Google Play Store.
 </p>
 
 
+
 </div>
+
+
 
 
 </div>
 
 
 </section>
-<!-- DOWNLOAD CTA -->
+
+<!-- DOWNLOAD SECTION -->
 
 <section class="section" id="download">
+
 
 <div class="container">
 
 
-<div class="feature-card" style="text-align:center;padding:55px 25px;">
+<div class="feature-card download-card"
+style="
+text-align:center;
+padding:65px 30px;
+background:
+radial-gradient(
+circle at top,
+rgba(40,217,179,.18),
+transparent 65%
+),
+#102F38;
+">
 
 
 <div class="eyebrow">
-Start tracking today
+Start Today
 </div>
 
 
+
 <h2>
+
 A clearer view of your money starts with
-<span class="highlight">SpendNest.</span>
+
+<span class="highlight">
+SpendNest.
+</span>
+
 </h2>
 
 
+
 <p>
-Track expenses, plan your budget, and understand
-your spending with a simple personal finance
-experience.
+
+Track expenses, create budgets, and understand
+your spending with a simple private finance app.
+
 </p>
 
 
 
-<div class="button-row" style="justify-content:center;">
+
+
+<div class="button-row"
+style="justify-content:center;">
+
 
 
 <a class="btn btn-primary"
+
 href="https://apps.apple.com/us/app/spendnest-expense-tracker/id6812546661"
+
 target="_blank"
+
 rel="noopener noreferrer">
 
-<span class="btn-icon"></span>
-Download on the App Store
+
+<span class="btn-icon">
+
+</span>
+
+
+Download on App Store
+
 
 </a>
+
+
+
 
 
 
 <a class="btn btn-secondary"
+
 href="https://play.google.com/store/apps/details?id=com.rkr.spendnest"
+
 target="_blank"
+
 rel="noopener noreferrer">
 
-<span class="btn-icon">▶</span>
+
+<span class="btn-icon">
+▶
+</span>
+
+
 Get it on Google Play
+
 
 </a>
 
 
-</div>
 
 
 </div>
 
 
+
 </div>
+
+
+</div>
+
 
 </section>
+
+
 
 
 
@@ -996,12 +1541,15 @@ Get it on Google Play
 
 
 
+
+
+
 <!-- FOOTER -->
 
 
 <footer style="
 border-top:1px solid rgba(40,217,179,.18);
-padding:35px 0;
+padding:40px 0;
 ">
 
 
@@ -1011,8 +1559,11 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 flex-wrap:wrap;
-gap:20px;
+gap:25px;
 ">
+
+
+
 
 
 <div>
@@ -1020,20 +1571,35 @@ gap:20px;
 
 <a href="#home" class="brand">
 
+
 <span class="brand-mark">
-S
+
+<img src="appIcon.png"
+alt="SpendNest app icon">
+
 </span>
+
+
 
 <span>
 SpendNest
 </span>
 
+
 </a>
 
 
-<p style="font-size:13px;margin-top:12px;">
-© <span id="year"></span> SpendNest. All rights reserved.
+
+<p style="
+font-size:13px;
+margin-top:12px;
+">
+
+© <span id="year"></span>
+SpendNest. All rights reserved.
+
 </p>
+
 
 
 </div>
@@ -1041,13 +1607,16 @@ SpendNest
 
 
 
+
+
 <div style="
 display:flex;
-gap:18px;
+gap:20px;
 flex-wrap:wrap;
 color:#b7d2d2;
 font-size:14px;
 ">
+
 
 
 <a href="#features">
@@ -1055,9 +1624,11 @@ Features
 </a>
 
 
+
 <a href="#privacy">
 Privacy
 </a>
+
 
 
 <a href="#faq">
@@ -1065,19 +1636,30 @@ FAQ
 </a>
 
 
+
+
 <a href="https://apps.apple.com/us/app/spendnest-expense-tracker/id6812546661"
 target="_blank">
+
 App Store
+
 </a>
+
+
 
 
 <a href="https://play.google.com/store/apps/details?id=com.rkr.spendnest"
 target="_blank">
+
 Google Play
+
 </a>
 
 
+
 </div>
+
+
 
 
 </div>
@@ -1089,14 +1671,23 @@ Google Play
 
 
 
+
+
+
 <script>
+
 
 document.getElementById("year").textContent =
 new Date().getFullYear();
+
 
 </script>
 
 
 
+
+
+
 </body>
+
 </html>
